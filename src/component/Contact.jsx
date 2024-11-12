@@ -78,7 +78,10 @@ const Contact = () => {
 
         } else {
             setLoading(false);
-
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
             Swal.fire({
                 position: 'top-end',
                 icon: 'error',
