@@ -13,7 +13,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <Analytics />
-      <Suspense fallback={<h1>LOADING .....</h1>}>
         <div className='bg-primary overflow-hidden' >
           <Header />
           <Hero />
@@ -24,7 +23,6 @@ export default function App() {
             <StarsCanvas />
           </div>
         </div>
-      </Suspense>
     </BrowserRouter>
 
   )

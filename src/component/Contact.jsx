@@ -50,6 +50,10 @@ const Contact = () => {
                 .then(
                     () => {
                         setLoading(false);
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
@@ -73,6 +77,8 @@ const Contact = () => {
                 );
 
         } else {
+            setLoading(false);
+
             Swal.fire({
                 position: 'top-end',
                 icon: 'error',
