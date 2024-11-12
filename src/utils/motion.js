@@ -23,7 +23,7 @@ export const textVariant = (delay) => {
         y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
         opacity: 0,
       },
-      
+        
       whileInView: {
         x: 0,
         y: 0,

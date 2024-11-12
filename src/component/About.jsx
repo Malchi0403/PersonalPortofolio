@@ -9,7 +9,7 @@ const ServiceSkills = ({ index, name }) => {
         <div className="w-full  ">
             <div className=" w-[100%]  mx-auto flex justify-center items-center  ">
 
-                <Tilt className=" ">
+                <Tilt className=" w-[90%]">
                     <motion.div initial={{
                         opacity: 0,
                         y: -25,
@@ -26,7 +26,7 @@ const ServiceSkills = ({ index, name }) => {
                         <div
                             className='bg-tertiary rounded-[20px] py-1   flex justify-evenly items-center flex-col'
                         >
-                            <h3 className='text-white max-xs:text-[8px] sm:text-[10px] md:text-[10px] text-[14px] font-bold text-center'>
+                            <h3 className='text-white max-xs:text-[8px] xs:text-[8.5px] sm:text-[8px] md:text-[8px] text-[14px] font-bold text-center'>
                                 {name}
                             </h3>
                         </div>
