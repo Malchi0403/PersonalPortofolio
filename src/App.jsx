@@ -8,7 +8,6 @@ const About = lazy(() => import("./component/About"))
 const Projects = lazy(() => import("./component/Projects"))
 const Contact = lazy(() => import("./component/Contact"))
 const StarsCanvas = lazy(() => import("./component/canvas/Stars"))
-import { SpeedInsights } from "@vercel/speed-insights/next"
 export default function App() {
   return (
     <BrowserRouter>
@@ -22,7 +21,7 @@ export default function App() {
             <Contact />
             <StarsCanvas />
           </div>
-          <SpeedInsights />
+          
         </div>
     </BrowserRouter>
 
