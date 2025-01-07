@@ -60,6 +60,31 @@ export const profile = [
                         color: "pink-text-gradient",
                     },
                 ],
+            },
+            {
+                title: 'GPdI Shekinah',
+                desc: 'Welcome to GPdI Shekinah, a place where faith and community come together. Our website is designed to give you easy access to information about our church, events, services, and more. Whether you’re a first-time visitor or a regular member, we aim to make your experience seamless and inspiring.',
+                vercel: '',
+                github: 'https://github.com/Malchiram/gpdi',
+                image: dewetour,
+                tags: [
+                    {
+                        name: "react",
+                        color: "blue-text-gradient",
+                    },
+                    {
+                        name: "strapi",
+                        color: "green-text-gradient",
+                    },
+                    {
+                        name: "cloudinary",
+                        color: "pink-text-gradient",
+                    },
+                    {
+                        name: "restAPI",
+                        color: "pink-text-gradient",
+                    },
+                ],
             }
         ]
     }
