@@ -11,7 +11,7 @@ import { Stars } from "./canvas"
 
 
 // download
-const PDF_FILE_URL = "/Resume.pdf"
+const PDF_FILE_URL = "/cv.pdf"
 // size 3d
 function MyMesh() {
     const meshPosition = useRef([1.2, -3, 2]);

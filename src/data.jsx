@@ -43,8 +43,8 @@ export const profile = [
             {
                 title: 'Dewe-tour',
                 desc: 'Dewe-Tour is website offering personalized tour packages for holidaymakers and staycation seekers. User-friendly interface enables easy exploration, booking, and customization of itineraries. Emphasis on transparency reliability, and convenience for an enhanced customer experience.',
-                vercel: 'https://dw-tour-final-a15oc8hw8-malchi0403.vercel.app',
-                github: 'https://github.com/Malchi0403/dw-tour-final_',
+                vercel: 'https://projectstour.vercel.app',
+                github: 'https://github.com/Malchiram/TourProject',
                 image: dewetour,
                 tags: [
                     {
@@ -74,7 +74,7 @@ export const social = [
     },
     {
         icon: <FiGithub />,
-        href: 'https://github.com/Malchi0403',
+        href: 'https://github.com/Malchiram',
         color: "text-white",
         colorHover: "hover:text-gray-500",
     },
