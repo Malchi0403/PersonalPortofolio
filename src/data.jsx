@@ -2,7 +2,7 @@ import MyImage from './assets/images/me.webp'
 import MyIcon from './assets/images/icon.webp'
 import { FiFacebook, FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi'
 import { javascript, html, css, reactjs, vue, postgre, bootstrap, golang, mysql, tailwind, nodejs, git, threejs, } from "./assets/tech";
-import { waysfood, dewetour } from './assets/projectImage';
+import { waysfood, dewetour,gpdi } from './assets/projectImage';
 export const images = [
     {
         mine: MyImage,
@@ -66,7 +66,7 @@ export const profile = [
                 desc: 'Welcome to GPdI Shekinah, a place where faith and community come together. Our website is designed to give you easy access to information about our church, events, services, and more. Whether you’re a first-time visitor or a regular member, we aim to make your experience seamless and inspiring.',
                 vercel: '',
                 github: 'https://github.com/Malchiram/gpdi',
-                image: dewetour,
+                image: gpdi,
                 tags: [
                     {
                         name: "react",
