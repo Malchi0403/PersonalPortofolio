@@ -14,7 +14,7 @@
     "@loadable/component": "^5.15.3",
     "@react-three/drei": "^9.78.0",
     "@react-three/fiber": "^8.13.4",
-    "@vercel/analytics": "^1.0.1",
+    "@vercel/analytics": "^1.4.1",
     "dotenv": "^16.3.1",
     "framer-motion": "^10.12.18",
     "maath": "^0.7.0",
