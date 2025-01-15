@@ -115,6 +115,12 @@ export const social = [
         color: "text-blue-500",
         colorHover: "hover:text-blue-600",
     },
+    {
+        icon: <FaWhatsapp />,
+        href: 'https://wa.me/6282114057823',
+        color: "text-green-500",
+        colorHover: "hover:text-green-600",
+    },
 ]
 
 export const navigation = [
