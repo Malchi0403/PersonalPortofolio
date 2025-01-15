@@ -1,58 +1,64 @@
 import { Float, Preload } from "@react-three/drei"
 import { Canvas, useThree } from "@react-three/fiber"
 import { motion } from 'framer-motion'
-import { Suspense, useEffect, useRef } from "react"
+import { Suspense, useEffect, useMemo, useRef, useState } from "react"
 import { Link } from "react-scroll"
 import { Newest } from "../Newest"
-import { navigation, profile } from "../data"
+import { navigation, profile, social } from "../data"
 import { SectionWrapper } from "../hoc"
 import CanvasLoader from "./Loader"
 import { Stars } from "./canvas"
-
+import React from "react"
 
 // download
 const PDF_FILE_URL = "/cv.pdf"
 // size 3d
-function MyMesh() {
-    const meshPosition = useRef([1.2, -3, 2]);
-    const meshScale = useRef(1.5);
-    const meshRotation = useRef([1, 0, 0]);
-    const { size} = useThree();
-console.log(size);
+function MyMesh({isMobile}) {
+ 
+    const positionMouse = useMemo(() => {
+        
+        if(isMobile){
+            return [1.2,-3,2]
+            
+        } else {
+            return [0,0,0]
+        }
 
-    useEffect(() => {
-        const handleResize = () => {
-            const { innerWidth } = window;
-            const isMobile = innerWidth > 1024;
+    },[isMobile])
+    const positionFloatMouse = useMemo(() => {
+        
+        if(isMobile){
+            return  [0.5, -1.5, -2]
+            
+        } else {
+            return [0, -2, 0.3]
+        }
 
-            if (isMobile) {
-                meshScale.current = 1.7;
-                meshPosition.current = [0, -3, -1];
-                meshRotation.current = [0, 0, 0];
-            } else {
-                meshPosition.current = [1.2, -3, 2];
-                meshScale.current = 1.2;
-                meshRotation.current = [0, 0, 1];
-            }
-        };
+    },[isMobile])
+    const scaleMouse = useMemo(() => {
+        
+        if(isMobile){
+            return 3
+            
+        } else {
+            return 1.7
+        }
 
-        handleResize();
-
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, [size]);
+    },[isMobile])
+const meshPosition = useRef(positionMouse);
+const meshPositionFloat = useRef(positionFloatMouse);
+const meshScale = useRef(scaleMouse);
+    const meshRotation = useRef([0, 0, 0]);
+    
 
     return (
         <group  >
 
-            <mesh  scale={meshScale.current} position={meshPosition.current}>
-                {/* <Float position={[3, 0, 0]} rotation={meshRotation.current}> */}
+            <mesh  scale={meshScale.current ?? 1.2} position={meshPosition.current ?? [1.2, -3, 2] }>
+                <Float position={meshPositionFloat.current} rotation={meshRotation.current}>
                     <ambientLight intensity={1.3} />
                     <Newest />
-                {/* </Float>     */}
+                </Float>    
             </mesh>
         </group>
     );
@@ -74,12 +80,32 @@ const Hero = () => {
         })
 
     }
+    const [isMobile,setIsMobile] = useState(false)
+    const checkWindowSize = () => {
+        let windowWidth;
+        if(typeof window !== 'undefined'){
+            windowWidth = window.innerWidth
+        }
+        if(windowWidth <= 1024) {
+            setIsMobile(true)
+        } else {
+            setIsMobile(false)
+        }
+    }
+    useEffect(() => {
+        checkWindowSize()
+    },[isMobile])
+    if(typeof window !== 'undefined') {
+        window.addEventListener('resize',checkWindowSize)
+    }
+    console.log(isMobile);
+    
     const [Profile] = profile
     return (
         <div className="mb-20 mt-2 md:mt-16 lg:mt-0">
             <Stars />
             <section id="home" className="h-[100vh] flex items-center w-full flex-col">
-                <div className="container mx-auto h-full flex justify-center ">
+                <div className="container mx-auto h-full flex flex-col justify-center ">
                     <div className="flex items-center"
                     >
                         <div className="flex flex-col-reverse xs:gap-y-4 scale-75 lg:scale-100  md:flex-col-reverse lg:flex-row">
@@ -123,43 +149,35 @@ const Hero = () => {
                                         onClick={() => downloadFile(PDF_FILE_URL)} className='text-white font-primary tracking-wider bg-gradient-to-br from-violet-500 via-pink-500 to-red-500 px-10 py-1 md:py-2 md:px-14 rounded-full' >DOWNLOAD CV</button>
                                 </motion.div>
                             </div>
-                            <motion.div initial={{
-                                opacity: 0,
-                                y: -25,
-                            }}
-                            viewport={{once: true}}
-                                whileInView={{
-                                    opacity: 1,
-                                    y: 0,
-                                    transition: {
-                                        duration: 1,
-                                        delay: 1.2,
-                                    }
-                                }} className="w-1/2 lg:w-auto mx-auto h-72  flex items-end  bg-violet-800 bg-opacity-20 rounded-t-full outline outline-offset-8 outline-fuchsia-600">
-                                <Canvas  camera={{ position: [0, 0, 6] }}  className="    !w-full !h-full">
-                                    {/* <Suspense fallback={<CanvasLoader />}> */}
-                                        <MyMesh />
-                                    {/* </Suspense> */}
-                                    {/* <Preload all /> */}
+                            <div className="w-1/2  lg:w-auto mx-auto h-72    bg-violet-800 bg-opacity-20 rounded-t-full outline outline-offset-8 outline-fuchsia-600">
+                                <div className="w-full h-full ">
+
+                                <Canvas  camera={{ position:isMobile ?[0,0,7] :[0, 0, 8] ,near: 1, far: 100 }} >
+                                    <Suspense fallback={<CanvasLoader />}>
+                                        <MyMesh isMobile={isMobile} />
+                                    </Suspense>
+                                    <Preload all />
                                 </Canvas>
-                            </motion.div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <motion.div initial={{
-                    opacity: 0,
-                    y: -25,
-                }}
-                viewport={{once:true}}
+                    <div className="w-full -mt-14 md:hidden">
+                              <ul className="flex justify-evenly w-full ">
+                                  {social.map((item, index) => {
+                                      return (
+                                          <li key={index} className={`flex justify-content items-center ${item.color ? item.color : "text-white"} ${item.colorHover ? item.colorHover : 'hover:text-red-500'}`}>
+                                              <a href={item.href} className="text-base">
+                                                  {React.cloneElement(item.icon,{size:20})}
+                                              </a>
+                                          </li>
+                                      )
+                                  })}
+                              </ul>
 
-                    whileInView={{
-                        opacity: 1,
-                        y: 0,
-                        transition: {
-                            duration: 1,
-                            delay: 1.2,
-                        }
-                    }} className="absolute  lg:bottom-64 md:bottom-64 bottom-7 ">
+</div>
+                </div>
+                <div  className="absolute  lg:bottom-64 md:bottom-64 bottom-7 ">
                     <div className="absolute hidden md:top-44 lg:bottom-1 w-full md:flex justify-center  items-center z-30">
                         <Link
                             to={navigation[1].id}
@@ -182,7 +200,9 @@ const Hero = () => {
                             />
                         </Link>
                     </div>
-                </motion.div>
+                </div>
+
+               
             </section>
         </div>
     )

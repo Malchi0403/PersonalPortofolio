@@ -9,7 +9,6 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 export function Newest(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/news.glb')
-  console.log(group, 'ini group');
   
   const { actions } = useAnimations(animations, group)
   useEffect(() => {

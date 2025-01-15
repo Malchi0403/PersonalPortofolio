@@ -3,6 +3,7 @@ import MyIcon from './assets/images/icon.webp'
 import { FiFacebook, FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi'
 import { javascript, html, css, reactjs, vue, postgre, bootstrap, golang, mysql, tailwind, nodejs, git, threejs, } from "./assets/tech";
 import { waysfood, dewetour,gpdi } from './assets/projectImage';
+import { FaWhatsapp } from "react-icons/fa";
 export const images = [
     {
         mine: MyImage,
