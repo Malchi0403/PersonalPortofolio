@@ -23,8 +23,8 @@ export const profile = [
             {
                 title: 'Ways-food',
                 desc: 'Waysfood is my project used React.Js & Golang . this website for make it easily user for orders food from anywhere.',
-                vercel: 'https://waysfood-inky.vercel.app',
-                github: 'https://github.com/Malchi0403/FinalWaysfood',
+                vercel: 'https://foodsmarket.vercel.app/',
+                github: 'https://github.com/Malchiram/foodmarket',
                 image: waysfood,
                 tags: [
                     {

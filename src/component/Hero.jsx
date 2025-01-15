@@ -98,7 +98,6 @@ const Hero = () => {
     if(typeof window !== 'undefined') {
         window.addEventListener('resize',checkWindowSize)
     }
-    console.log(isMobile);
     
     const [Profile] = profile
     return (

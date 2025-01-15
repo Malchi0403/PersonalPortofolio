@@ -22,28 +22,11 @@ const ProjectCard = ({ index, title, desc, vercel, github, image, tags }) => (
                 delay: 1 + index * 0.2,
             }
         }}>
-        <Tilt
-            options={{
-                max: 45,
-                scale: 1,
-                speed: 450,
-            }}
+        <div
+            
             className='bg-sky-950 mb-40 p-5 rounded-2xl sm:w-[360px] w-full '
         >
-            <motion.div initial={{
-                opacity: 0,
-                y: -25,
-            }}
-            viewport={{once:true}}
-
-                whileInView={{
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                        duration: 1,
-                        delay: 1,
-                    }
-                }} className='relative w-full h-[230px] '>
+            <div className='relative w-full h-[230px] '>
                 <img
                     src={image}
                     alt='project_image'
@@ -51,6 +34,8 @@ const ProjectCard = ({ index, title, desc, vercel, github, image, tags }) => (
                 />
 
                 <div className='absolute inset-0 top-[-8px] flex justify-between gap-3 m-3 '>
+                    {index !== 2 && (
+
                     <div
                         onClick={() => window.open(vercel, "_blank")}
                         className='bg-slate-100 card_image w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
@@ -61,6 +46,7 @@ const ProjectCard = ({ index, title, desc, vercel, github, image, tags }) => (
                             className='w-5/6 h-5/6 object-contain'
                         />
                     </div>
+                    )}
                     <div
                         onClick={() => window.open(github, "_blank")}
                         className='black-gradient card_image w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
@@ -73,23 +59,23 @@ const ProjectCard = ({ index, title, desc, vercel, github, image, tags }) => (
                     </div>
                 </div>
 
-            </motion.div>
+            </div>
 
             <div className='mt-5 overflow-auto'>
                 <h3 className='text-white font-bold text-[24px]'>{title}</h3>
                 <p className='mt-2 text-secondary text-sm' style={{ maxHeight: '65px' }}>{desc}</p>
             </div>
             <div className='mt-4 flex flex-wrap gap-2'>
-                {tags.map((tag) => (
+                {tags.map((tag,i) => (
                     <p
-                        key={`${name}-${tag.name}`}
+                        key={i}
                         className={`text-[14px] ${tag.color}`}
                     >
                         #{tag.name}
                     </p>
                 ))}
             </div>
-        </Tilt>
+        </div>
     </motion.div>
 )
 
