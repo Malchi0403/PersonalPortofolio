@@ -153,7 +153,7 @@ export const skills = [
         icon: tailwind,
     },
     {
-        name: "C#",
+        name: "Docker",
         icon: bootstrap,
     },
     {
