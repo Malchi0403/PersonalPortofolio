@@ -16,7 +16,7 @@ export const Navbar = () => {
                                 spy={true}
                                 smooth={true}
                                 duration={400}
-                                offset={item.id === "home" ? 0 : 80}
+                                offset={item.id === "home" ? 10 : 80}
                                 className="transition-all duration-400">
                                 {item.name}
                             </Link>
