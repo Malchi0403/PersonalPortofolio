@@ -24,9 +24,9 @@ const ProjectCard = ({ index, title, desc, vercel, github, image, tags }) => (
         }}>
         <div
             
-            className='bg-sky-950 mb-40 p-5 rounded-2xl sm:w-[360px] w-full '
+            className='bg-sky-950 min-h-[380px] p-5 rounded-2xl sm:w-[360px] w-full flex flex-col justify-between'
         >
-            <div className='relative w-full h-[230px] '>
+            <div className='relative w-full h-[160px] '>
                 <img
                     src={image}
                     alt='project_image'
@@ -34,7 +34,6 @@ const ProjectCard = ({ index, title, desc, vercel, github, image, tags }) => (
                 />
 
                 <div className='absolute inset-0 top-[-8px] flex justify-between gap-3 m-3 '>
-                    {index !== 2 && (
 
                     <div
                         onClick={() => window.open(vercel, "_blank")}
@@ -46,7 +45,6 @@ const ProjectCard = ({ index, title, desc, vercel, github, image, tags }) => (
                             className='w-5/6 h-5/6 object-contain'
                         />
                     </div>
-                    )}
                     <div
                         onClick={() => window.open(github, "_blank")}
                         className='black-gradient card_image w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
@@ -61,11 +59,11 @@ const ProjectCard = ({ index, title, desc, vercel, github, image, tags }) => (
 
             </div>
 
-            <div className='mt-5 overflow-auto'>
+            <div className=' flex-grow my-3 my-elements'>
                 <h3 className='text-white font-bold text-[24px]'>{title}</h3>
-                <p className='mt-2 text-secondary text-sm' style={{ maxHeight: '65px' }}>{desc}</p>
+                <p className='mt-2 text-secondary text-sm' style={{ maxHeight: '50px' }}>{desc}</p>
             </div>
-            <div className='mt-4 flex flex-wrap gap-2'>
+            <div className=' flex flex-wrap gap-1'>
                 {tags.map((tag,i) => (
                     <p
                         key={i}

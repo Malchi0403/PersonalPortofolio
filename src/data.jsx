@@ -2,7 +2,7 @@ import MyImage from './assets/images/me.webp'
 import MyIcon from './assets/images/icon.webp'
 import { FiFacebook, FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi'
 import { javascript, html, css, reactjs, vue, postgre, bootstrap, golang, mysql, tailwind, nodejs, git, threejs, } from "./assets/tech";
-import { waysfood, dewetour,gpdi } from './assets/projectImage';
+import { waysfood, dewetour,gpdi,rootopia } from './assets/projectImage';
 import { FaWhatsapp } from "react-icons/fa";
 export const images = [
     {
@@ -64,29 +64,55 @@ export const profile = [
             },
             {
                 title: 'GPdI Shekinah',
-                desc: 'Welcome to GPdI Shekinah, a place where faith and community come together. Our website is designed to give you easy access to information about our church, events, services, and more. Whether you’re a first-time visitor or a regular member, we aim to make your experience seamless and inspiring.',
-                vercel: '',
+                desc: 'GPdI Shekinah website is a dynamic landing page that serves as the digital home for the church community. Visitors can easily explore upcoming church events, and get details about the location.',
+                vercel: 'https://gpdishekinah.online/',
                 github: 'https://github.com/Malchiram/gpdi',
                 image: gpdi,
                 tags: [
                     {
-                        name: "react",
+                        name: "nextJS",
                         color: "blue-text-gradient",
                     },
                     {
-                        name: "strapi",
+                        name: "docker",
                         color: "green-text-gradient",
                     },
                     {
-                        name: "cloudinary",
+                        name: "golang",
                         color: "pink-text-gradient",
                     },
                     {
-                        name: "restAPI",
+                        name: "fullstack development",
                         color: "pink-text-gradient",
                     },
                 ],
-            }
+            },
+            {
+                title: 'Rootopia',
+                desc: ' Developed an interactive 3D website using Three.js and React.js, focusing on the main interface and dynamic 3D-based navigation. This project began as a freelance contract but was discontinued by the client before completion. It is still used as a showcase of my skills in UI design and web-based 3D development.',
+                vercel: 'https://3d-rootopia.vercel.app',
+                github: 'https://github.com/Malchiram/3d-rootopia',
+                image: rootopia,
+                tags: [
+                    {
+                        name: "Next JS",
+                        color: "blue-text-gradient",
+                    },
+                    {
+                        name: "Tailwind",
+                        color: "green-text-gradient",
+                    },
+                    {
+                        name: "Three JS",
+                        color: "pink-text-gradient",
+                    },
+                    {
+                        name: "3D",
+                        color: "pink-text-gradient",
+                    },
+                ],
+            },
+          
         ]
     }
 ]

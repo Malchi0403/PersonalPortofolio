@@ -87,6 +87,17 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  .my-elements {
+    overflow: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  }
+  
+  .my-elements::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+  
   
   .green-text-gradient {
     background: #11998e; /* fallback for old browsers */
