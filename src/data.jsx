@@ -17,14 +17,14 @@ export const images = [
 export const profile = [
     {
         name: 'Malchiram',
-        content: "I'm Fullstack Developer ,who uses coding to operate on both Front-end & Back-end system.",
-        textAbout: "I'm a dedicated full-stack developer with a strong foundation in both frontend and backend development. With a year of industry experience as a frontend engineer, I have successfully developed and maintained applications that deliver seamless user experiences and efficient backend systems. My passion lies in building scalable, responsive, and robust web solutions, and I enjoy working on both the client and server sides to bring ideas to life. I am always eager to learn and improve, driven by a commitment to high-quality code and a user-centered approach to development.",
+        content: "Fullstack Developer crafting seamless experiences from frontend to backend.",
+        textAbout: "I'm a dedicated Fullstack Developer with 2 years of experience, combining strong frontend skills with solid backend knowledge. I specialize in building scalable, responsive, and user-focused web applications using technologies like React, Next.js, Golang, and React Native.With a background as a Frontend Engineer in a professional setting and hands-on experience in fullstack freelance projects, I enjoy working across the entire development stack—from crafting smooth user interfaces to developing reliable backend APIs. I’m passionate about writing clean, maintainable code and constantly learning to improve both technically and creatively.",
         projects: [
             {
                 title: 'Ways-food',
                 desc: 'Waysfood is my project used React.Js & Golang . this website for make it easily user for orders food from anywhere.',
                 vercel: 'https://foodsmarket.vercel.app/',
-                github: 'https://github.com/Malchiram/foodmarket',
+                github: 'https://github.com/Malchi0403/foodmarket',
                 image: waysfood,
                 tags: [
                     {
@@ -45,7 +45,7 @@ export const profile = [
                 title: 'Dewe-tour',
                 desc: 'Dewe-Tour is website offering personalized tour packages for holidaymakers and staycation seekers. User-friendly interface enables easy exploration, booking, and customization of itineraries. Emphasis on transparency reliability, and convenience for an enhanced customer experience.',
                 vercel: 'https://projectstour.vercel.app',
-                github: 'https://github.com/Malchiram/TourProject',
+                github: 'https://github.com/Malchi0403/TourProject',
                 image: dewetour,
                 tags: [
                     {
@@ -66,7 +66,7 @@ export const profile = [
                 title: 'GPdI Shekinah',
                 desc: 'GPdI Shekinah website is a dynamic landing page that serves as the digital home for the church community. Visitors can easily explore upcoming church events, and get details about the location.',
                 vercel: 'https://gpdishekinah.online/',
-                github: 'https://github.com/Malchiram/gpdi',
+                github: 'https://github.com/Malchi0403/gpdi',
                 image: gpdi,
                 tags: [
                     {
@@ -91,7 +91,7 @@ export const profile = [
                 title: 'Rootopia',
                 desc: ' Developed an interactive 3D website using Three.js and React.js, focusing on the main interface and dynamic 3D-based navigation. This project began as a freelance contract but was discontinued by the client before completion. It is still used as a showcase of my skills in UI design and web-based 3D development.',
                 vercel: 'https://3d-rootopia.vercel.app',
-                github: 'https://github.com/Malchiram/3d-rootopia',
+                github: 'https://github.com/Malchi0403/3d-rootopia',
                 image: rootopia,
                 tags: [
                     {
@@ -126,7 +126,7 @@ export const social = [
     },
     {
         icon: <FiGithub />,
-        href: 'https://github.com/Malchiram',
+        href: 'https://github.com/Malchi0403',
         color: "text-white",
         colorHover: "hover:text-gray-500",
     },
