@@ -151,7 +151,7 @@ const Projects = () => {
                     </motion.p>
                 </div>
 
-                <div className='mt-5 -inset-y-1 flex flex-wrap gap-7 max-xs:gap-0'>
+                <div className='mt-5 -inset-y-1 flex flex-wrap gap-7 max-xs:gap-3'>
                     {Profile.projects.map((item, index) => {
                         return (
                             <ProjectCard key={`item-${index}`} index={index} {...item} />

@@ -2,7 +2,7 @@ import MyImage from './assets/images/me.webp'
 import MyIcon from './assets/images/icon.webp'
 import { FiFacebook, FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi'
 import { javascript, html, css, reactjs, vue, postgre, bootstrap, golang, mysql, tailwind, nodejs, git, threejs, } from "./assets/tech";
-import { waysfood, dewetour,gpdi,rootopia } from './assets/projectImage';
+import { waysfood, dewetour,gpdi,rootopia,amanah } from './assets/projectImage';
 import { FaWhatsapp } from "react-icons/fa";
 export const images = [
     {
@@ -20,6 +20,55 @@ export const profile = [
         content: "Fullstack Developer crafting seamless experiences from frontend to backend.",
         textAbout: "I'm a dedicated Fullstack Developer with 2 years of experience, combining strong frontend skills with solid backend knowledge. I specialize in building scalable, responsive, and user-focused web applications using technologies like React, Next.js, Golang, and React Native.With a background as a Frontend Engineer in a professional setting and hands-on experience in fullstack freelance projects, I enjoy working across the entire development stack—from crafting smooth user interfaces to developing reliable backend APIs. I’m passionate about writing clean, maintainable code and constantly learning to improve both technically and creatively.",
         projects: [
+            {
+                title: 'GPdI Shekinah',
+                desc: 'GPdI Shekinah website is a dynamic landing page that serves as the digital home for the church community. Visitors can easily explore upcoming church events, and get details about the location.',
+                vercel: 'https://gpdishekinah.online/',
+                github: 'https://github.com/Malchi0403/gpdi',
+                image: gpdi,
+                tags: [
+                    {
+                        name: "nextJS",
+                        color: "blue-text-gradient",
+                    },
+                    {
+                        name: "docker",
+                        color: "green-text-gradient",
+                    },
+                    {
+                        name: "golang",
+                        color: "pink-text-gradient",
+                    },
+                    {
+                        name: "fullstack development",
+                        color: "pink-text-gradient",
+                    },
+                ],
+            },{
+                title: 'Amanah Jaya Service',
+                desc: 'Amanah Jaya Service is my client project , they asked me for help them to build their website from scratch .',
+                vercel: 'https://amanahjaya.vercel.app/',
+                github: 'https://github.com/Malchi0403/amanahjaya',
+                image: amanah,
+                tags: [
+                    {
+                        name: "Next Js",
+                        color: "blue-text-gradient",
+                    },
+                    {
+                        name: "SEO",
+                        color: "green-text-gradient",
+                    },
+                    {
+                        name: "Framer motion",
+                        color: "pink-text-gradient",
+                    },
+                    {
+                        name: "typescript",
+                        color: "pink-text-gradient",
+                    },
+                ],
+            },
             {
                 title: 'Ways-food',
                 desc: 'Waysfood is my project used React.Js & Golang . this website for make it easily user for orders food from anywhere.',
@@ -58,31 +107,6 @@ export const profile = [
                     },
                     {
                         name: "golang",
-                        color: "pink-text-gradient",
-                    },
-                ],
-            },
-            {
-                title: 'GPdI Shekinah',
-                desc: 'GPdI Shekinah website is a dynamic landing page that serves as the digital home for the church community. Visitors can easily explore upcoming church events, and get details about the location.',
-                vercel: 'https://gpdishekinah.online/',
-                github: 'https://github.com/Malchi0403/gpdi',
-                image: gpdi,
-                tags: [
-                    {
-                        name: "nextJS",
-                        color: "blue-text-gradient",
-                    },
-                    {
-                        name: "docker",
-                        color: "green-text-gradient",
-                    },
-                    {
-                        name: "golang",
-                        color: "pink-text-gradient",
-                    },
-                    {
-                        name: "fullstack development",
                         color: "pink-text-gradient",
                     },
                 ],
@@ -207,7 +231,7 @@ export const skills = [
         icon: vue,
     },
     {
-        name: "CMS",
+        name: "TypeScript",
         icon: threejs,
     },
     {

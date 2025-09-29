@@ -15,7 +15,7 @@ export default function App() {
           <Hero />
           <About />
           <Projects />
-          <div className='pb-80 lg:pb-7 px-2 relative z-0'>
+          <div className='py-5 min-h-dvh px-2 relative z-0'>
             <Contact />
             <StarsCanvas />
           </div>

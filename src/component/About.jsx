@@ -6,10 +6,10 @@ import { SectionWrapper } from '../hoc'
 
 const ServiceSkills = ({ index, name }) => {
     return (
-        <div className="w-full  ">
-            <div className=" w-[100%]  mx-auto flex justify-center items-center  ">
+        <div className="w-full  flex place-content-center  items-center">
+            <div className=" w-full  mx-auto flex justify-center items-center  ">
 
-                <Tilt className=" w-[90%]">
+                <Tilt className=" w-full">
                     <motion.div initial={{
                         opacity: 0,
                         y: -25,
@@ -22,13 +22,13 @@ const ServiceSkills = ({ index, name }) => {
                                 duration: 1,
                                 delay: 0.3 + index * 0.2,
                             }
-                        }} className='w-[170px] max-xs:w-[120px] lg:w-full green-pink-gradient p-[1px] rounded-[20px] shadow-sm shadow-slate-500'>
+                        }} className='w-[170px] max-xs:w-full lg:w-full green-pink-gradient p-[1px] rounded-[20px] shadow-sm shadow-slate-500'>
                         <div
                             className='bg-tertiary rounded-[20px] py-1   flex justify-evenly items-center flex-col'
                         >
-                            <h3 className='text-white max-xs:text-[8px] xs:text-[8.5px] sm:text-[8px] md:text-[8px] text-[14px] font-bold text-center'>
+                            <p className='text-white max-xs:text-[8px] xs:text-[8.5px] sm:text-[8px] md:text-[8px] text-[14px] font-bold text-center'>
                                 {name}
-                            </h3>
+                            </p>
                         </div>
                     </motion.div>
                 </Tilt>
@@ -41,10 +41,10 @@ const About = () => {
     const [Profile] = profile
     return (
 
-        <div className='m-6 mb-36 lg:mb-3 lg:m-14  relative' id={navigation[1].id}>
+        <div className='m-6 min-h-dvh lg:mb-3 lg:m-14  relative' id={navigation[1].id}>
 
             <div className='lg:flex xs:block gap-1 '>
-                <Tilt  className=" w-[130px] xs:w-[200px] lg:w-[100rem] xs:mx-auto max-xs:mx-auto items-center   ">
+                <Tilt  className=" w-[130px] xs:w-[200px] lg:w-[100rem] xs:mx-auto max-xs:mx-auto items-center  ">
                     <motion.img initial={{
                         opacity: 0,
                         y: -25,
@@ -94,8 +94,7 @@ const About = () => {
                                 }} className='text-justify text-xs md:text-base'>{Profile.textAbout}</motion.p>
                         </div>
                     </div>
-                    <div className='mt-2   mx-auto w-[90%]'>
-                        <motion.h1 
+                      <motion.h1 
                         initial={{
                             opacity: 0,
                             y: -25,
@@ -109,8 +108,10 @@ const About = () => {
                                 }
                             }}
                             viewport={{once:true}}
-                             className='text-center text-lg md:text-4xl mb-2 md:mb-4'>MY SKILL</motion.h1>
-                        <motion.div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-2 md:gap-x-14 gap-y-2 md:gap-y-3'>
+                             className='text-center text-lg md:text-4xl my-2 md:mb-4'>MY SKILL</motion.h1>
+                    <div className='mt-2 w-[90%] mx-auto '>
+                      
+                        <motion.div className='grid grid-cols-1 md:grid-cols-2 place-content-center gap-2 p-2'>
                             {skills.map((item, i) => (
                                 <ServiceSkills key={item.name} index={i} {...item} />
                             ))}
