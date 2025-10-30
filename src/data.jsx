@@ -18,7 +18,7 @@ export const profile = [
     {
         name: 'Malchiram',
         content: "Fullstack Developer crafting seamless experiences from frontend to backend.",
-        textAbout: "I'm a dedicated Fullstack Developer with 2 years of experience, combining strong frontend skills with solid backend knowledge. I specialize in building scalable, responsive, and user-focused web applications using technologies like React, Next.js, Golang, and React Native.With a background as a Frontend Engineer in a professional setting and hands-on experience in fullstack freelance projects, I enjoy working across the entire development stack—from crafting smooth user interfaces to developing reliable backend APIs. I’m passionate about writing clean, maintainable code and constantly learning to improve both technically and creatively.",
+        textAbout: "I'm a Full Stack Developer with almost 3 years of experience delivering end-to-end web and mobile solutions using Next.js, Golang, TypeScript, and React Native. Adept at developing efficient APIs, building responsive user interfaces, and deploying applications through Docker, AWS, and GCP. Passionate about scalable software design and global collaboration. Eager to contribute technical expertise and creative problem-solving to an innovative engineering team.",
         projects: [
             {
                 title: 'GPdI Shekinah',

@@ -11,7 +11,7 @@ import { Stars } from "./canvas"
 import React from "react"
 
 // download
-const PDF_FILE_URL = "/cv.pdf"
+const PDF_FILE_URL = "/Misael_Timpolas_Fullstack_Developer.pdf"
 // size 3d
 function MyMesh({isMobile}) {
  
