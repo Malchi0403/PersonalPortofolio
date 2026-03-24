@@ -94,19 +94,19 @@ const Contact = () => {
 
     return (
         <div
-            className={`  flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
-        >
+            className={`h-[calc(100dvh-4rem)] mt-14 container py-4 flex xl:flex-row flex-col-reverse justify-between z-10  overflow-hidden items-center `}
+        id={navigation[3].id}>
             <motion.div
                 variants={slideIn("left", "tween", 0.2, 1)}
-                className='flex-[0.75] bg-sky-950 h-5/6 px-8 py-6 rounded-2xl'
+                className='flex-[0.75] bg-sky-950 h-[90%] px-8 py-6  rounded-2xl'
             >
-                <p className={`${styles.sectionSubText} mb-2 ms-1`}>Get in touch</p>
-                <h3 className="text-white font-bold md:text-[48px] sm:text-[40px] xs:text-[38px] text-[30px]">Contact</h3>
+                {/* <p className={`${styles.sectionSubText} mb-1 text-center ms-1`}>Get in touch</p> */}
+                <h3 className="text-white  text-center sm:text-[40px] xs:text-[38px] text-[30px]">Contact Me</h3>
 
                 <form
                     ref={formRef}
                     onSubmit={handleSubmit}
-                    className='mt-12 flex flex-col gap-3'
+                    className=' flex flex-col gap-1 mt-6'
                 >
                     <label className='flex flex-col'>
                         <span className='text-white font-medium mb-2'>Your Name</span>
@@ -130,7 +130,7 @@ const Contact = () => {
                             required
                             autoComplete="off"
                             onChange={handleChange}
-                            placeholder="What's your web address?"
+                            placeholder="What's your email address?"
                             className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
                         />
                     </label>
@@ -145,7 +145,7 @@ const Contact = () => {
                             autoComplete="off"
                             onChange={handleChange}
                             placeholder='What you want to say?'
-                            className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium resize-none'
+                            className='bg-tertiary max-h-28 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium resize-none'
                         />
                     </label>
 
@@ -160,7 +160,7 @@ const Contact = () => {
 
             <motion.div
                 variants={slideIn("right", "tween", 0.2, 1)}
-                className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px] '
+                className='h-full xl:flex-1  '
             >
                 <EarthCanvas />
             </motion.div>
@@ -168,4 +168,4 @@ const Contact = () => {
     );
 };
 
-export default SectionWrapper(Contact, navigation[3].id);
+export default Contact

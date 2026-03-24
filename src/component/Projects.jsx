@@ -94,7 +94,7 @@ const Projects = () => {
                         duration: 1,
                         delay: 0.5,
                     }
-                }} className='m-6 max-xs:mt-10 mb-36 lg:mb-3 lg:mt-14  lg:mx-14  '>
+                }} className='min-h-[calc(100dvh-4rem)] mt-14 container  ' id={navigation[2].id}>
                 <div>
                     <motion.p initial={{
                         opacity: 0,
@@ -163,4 +163,4 @@ const Projects = () => {
     );
 };
 
-export default SectionWrapper(Projects, navigation[2].id)
+export default Projects

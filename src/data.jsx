@@ -16,8 +16,8 @@ export const images = [
 
 export const profile = [
     {
-        name: 'Malchiram',
-        content: "Fullstack Developer crafting seamless experiences from frontend to backend.",
+        name: 'Fullstack Engineer (Next.js, React, Golang)',
+        content: "I build fast, scalable, and production-ready web applications.2+ years experience working with international teams and building systems used by thousands of users.",
         textAbout: "I'm a Full Stack Developer with almost 3 years of experience delivering end-to-end web and mobile solutions using Next.js, Golang, TypeScript, and React Native. Adept at developing efficient APIs, building responsive user interfaces, and deploying applications through Docker, AWS, and GCP. Passionate about scalable software design and global collaboration. Eager to contribute technical expertise and creative problem-solving to an innovative engineering team.",
         projects: [
             {

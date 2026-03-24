@@ -14,7 +14,7 @@ const ServiceSkills = ({ index, name }) => {
                         opacity: 0,
                         y: -25,
                     }}
-                    viewport={{once:true}}
+                        viewport={{ once: true }}
                         whileInView={{
                             opacity: 1,
                             y: 0,
@@ -26,7 +26,7 @@ const ServiceSkills = ({ index, name }) => {
                         <div
                             className='bg-tertiary rounded-[20px] py-1   flex justify-evenly items-center flex-col'
                         >
-                            <p className='text-white max-xs:text-[8px] xs:text-[8.5px] sm:text-[8px] md:text-[8px] text-[14px] font-bold text-center'>
+                            <p className='text-white max-xs:text-[8px] xs:text-[8.5px] sm:text-[8px] md:text-[12px]  font-bold text-center'>
                                 {name}
                             </p>
                         </div>
@@ -41,15 +41,15 @@ const About = () => {
     const [Profile] = profile
     return (
 
-        <div className='m-6 min-h-dvh lg:mb-3 lg:m-14  relative' id={navigation[1].id}>
+        <div className='min-h-[calc(100dvh-4rem)] mt-14   w-full' id={navigation[1].id}>
 
-            <div className='lg:flex xs:block gap-1 '>
-                <Tilt  className=" w-[130px] xs:w-[200px] lg:w-[100rem] xs:mx-auto max-xs:mx-auto items-center  ">
+            <div className='flex flex-col md:flex-row  md:justify-around items-center  w-full gap-1 '>
+                <Tilt className=" w-full  lg:max-w-[30%] lg:grid lg:place-items-center   ">
                     <motion.img initial={{
                         opacity: 0,
                         y: -25,
                     }}
-                    viewport={{once:true}}
+                        viewport={{ once: true }}
 
                         whileInView={{
                             opacity: 1,
@@ -59,15 +59,15 @@ const About = () => {
                                 duration: 1,
                                 delay: 1,
                             }
-                        }} src={images[0].mine} className='h-full w-full object-cover border-8 rounded-lg lg:shadow-md shadow-slate-50' />
+                        }} src={images[0].mine} className='h-full w-1/2 mx-auto lg:w-full  lg:max-w-[280px] object-cover -8 rounded-lg lg:shadow-sm shadow-slate-50' />
                 </Tilt>
-                <div className="">
+                <div className="w-full lg:max-w-[70%] ">
                     <div className='lg:text-[42px] xs:text-[32px] text-center'>
                         <motion.h1 initial={{
                             opacity: 0,
                             y: 25,
                         }}
-                        viewport={{once:true}}
+                            viewport={{ once: true }}
 
                             whileInView={{
                                 opacity: 1,
@@ -82,7 +82,7 @@ const About = () => {
                                 opacity: 0,
                                 y: -25,
                             }}
-                            viewport={{once:true}}
+                                viewport={{ once: true }}
 
                                 whileInView={{
                                     opacity: 1,
@@ -91,26 +91,29 @@ const About = () => {
                                         duration: 1,
                                         delay: 1.2,
                                     }
-                                }} className='text-justify text-xs md:text-base'>{Profile.textAbout}</motion.p>
+                                }} className='text-justify text-xs md:text-base'>Fullstack Engineer with 2+ years of experience building production-ready web and mobile applications.<br />
+                                I specialize in Next.js, React, and Golang, creating scalable systems, high-performance APIs, and responsive user interfaces.<br/>
+                                I’ve worked with international teams and delivered real-world applications used by thousands of users.<br/>
+                                I focus on writing clean, maintainable code and building products that are fast, reliable, and user-friendly.</motion.p>
                         </div>
                     </div>
-                      <motion.h1 
+                    <motion.h1
                         initial={{
                             opacity: 0,
                             y: -25,
                         }}
-                            whileInView={{
-                                opacity: 1,
-                                y: 0,
-                                transition: {
-                                    duration: 1,
-                                    delay: 1,
-                                }
-                            }}
-                            viewport={{once:true}}
-                             className='text-center text-lg md:text-4xl my-2 md:mb-4'>MY SKILL</motion.h1>
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            transition: {
+                                duration: 1,
+                                delay: 1,
+                            }
+                        }}
+                        viewport={{ once: true }}
+                        className='text-center text-lg md:text-4xl my-2 md:mb-4'>MY SKILL</motion.h1>
                     <div className='mt-2 w-[90%] mx-auto '>
-                      
+
                         <motion.div className='grid grid-cols-1 md:grid-cols-2 place-content-center gap-2 p-2'>
                             {skills.map((item, i) => (
                                 <ServiceSkills key={item.name} index={i} {...item} />
@@ -123,4 +126,4 @@ const About = () => {
     )
 }
 
-export default SectionWrapper(About, navigation[1].id)
+export default About

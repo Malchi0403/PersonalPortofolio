@@ -7,7 +7,7 @@ export default {
   theme: {
     fontFamily: {
       primary: "Poppins",
-      body: "Poppins"
+      body: ['Poppins', 'sans-serif']
     },
     container: {
       padding:{
