@@ -10,162 +10,164 @@ import { navigation } from "../data";
 import Swal from "sweetalert2";
 
 const Contact = () => {
-    const formRef = useRef();
-    const [form, setForm] = useState({
-        name: "",
-        email: "",
-        message: "",
+  const formRef = useRef();
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { target } = e;
+    const { name, value } = target;
+
+    setForm({
+      ...form,
+      [name]: value,
     });
+  };
 
-    const [loading, setLoading] = useState(false);
-
-    const handleChange = (e) => {
-        const { target } = e;
-        const { name, value } = target;
-
-        setForm({
-            ...form,
-            [name]: value,
-
-        });
-    };
-    
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setLoading(true);
-        if(form.email.endsWith('@gmail.com')) {
-            emailjs
-                .send(
-                    import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-                    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-                    {
-                        from_name: form.name,
-                        to_name: "Misael Malchiram Timpolas",
-                        from_email: form.email,
-                        to_email: "misaeltimpolas04@gmail.com",
-                        message: form.message,
-                    },
-                    import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-                )
-                .then(
-                    () => {
-                        setLoading(false);
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'Thank you. I will get back to you as soon as possible.',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-    
-                        setForm({
-                            name: "",
-                            email: "",
-                            message: "",
-                        });
-                    },
-                    (error) => {
-                        setLoading(false);
-                        console.error(error);
-    
-                        alert("Ahh, something went wrong. Please try again.");
-                    }
-                );
-
-        } else {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    if (form.email.endsWith("@gmail.com")) {
+      emailjs
+        .send(
+          import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          {
+            from_name: form.name,
+            to_name: "Misael Malchiram Timpolas",
+            from_email: form.email,
+            to_email: "misaeltimpolas04@gmail.com",
+            message: form.message,
+          },
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        )
+        .then(
+          () => {
             setLoading(false);
             window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+              top: 0,
+              behavior: "smooth",
             });
             Swal.fire({
-                position: 'top-end',
-                icon: 'error',
-                title: 'Sorry , You must using your gmail for your email',
-                showConfirmButton: false,
-                timer: 1500
-            })
-        }
-    };
+              position: "top-end",
+              icon: "success",
+              title: "Thank you. I will get back to you as soon as possible.",
+              showConfirmButton: false,
+              timer: 1500,
+            });
 
-    return (
-        <div
-            className={`h-[calc(100dvh-4rem)] mt-14 container py-4 flex xl:flex-row flex-col-reverse justify-between z-10  overflow-hidden items-center `}
-        id={navigation[3].id}>
-            <motion.div
-                variants={slideIn("left", "tween", 0.2, 1)}
-                className='flex-[0.75] bg-sky-950 h-[90%] px-8 py-6  rounded-2xl'
+            setForm({
+              name: "",
+              email: "",
+              message: "",
+            });
+          },
+          (error) => {
+            setLoading(false);
+            console.error(error);
+
+            alert("Ahh, something went wrong. Please try again.");
+          }
+        );
+    } else {
+      setLoading(false);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Sorry , You must using your gmail for your email",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  };
+
+  return (
+    <div
+      className={`h-[calc(100dvh-4rem)] mt-14 w-full  flex justify-center  `}
+      id={navigation[3].id}
+    >
+      <div className="container h-full py-4 flex xl:flex-row flex-col-reverse justify-between z-10  overflow-hidden items-center  ">
+        <motion.div
+          variants={slideIn("left", "tween", 0.2, 1)}
+          className="flex-[0.75] bg-sky-950 h-[90%] px-8 py-6 min-w-[50%]  rounded-2xl"
+        >
+          {/* <p className={`${styles.sectionSubText} mb-1 text-center ms-1`}>Get in touch</p> */}
+          <h3 className="text-white  text-center sm:text-[40px] xs:text-[38px] text-[30px]">
+            Contact Me
+          </h3>
+
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className=" flex flex-col gap-1 mt-6"
+          >
+            <label className="flex flex-col">
+              <span className="text-white font-medium mb-2">Your Name</span>
+              <input
+                type="text"
+                name="name"
+                value={form.name}
+                required
+                autoComplete="off"
+                onChange={handleChange}
+                placeholder="What's your good name?"
+                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              />
+            </label>
+            <label className="flex flex-col">
+              <span className="text-white font-medium mb-2">Your email</span>
+              <input
+                type="email"
+                name="email"
+                value={form.email}
+                required
+                autoComplete="off"
+                onChange={handleChange}
+                placeholder="What's your email address?"
+                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              />
+            </label>
+            <label className="flex flex-col">
+              <span className="text-white font-medium mb-2">Your Message</span>
+              <textarea
+                rows={5}
+                name="message"
+                value={form.message}
+                required
+                autoComplete="off"
+                onChange={handleChange}
+                placeholder="What you want to say?"
+                className="bg-tertiary max-h-28 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium resize-none"
+              />
+            </label>
+
+            <button
+              type="submit"
+              className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
             >
-                {/* <p className={`${styles.sectionSubText} mb-1 text-center ms-1`}>Get in touch</p> */}
-                <h3 className="text-white  text-center sm:text-[40px] xs:text-[38px] text-[30px]">Contact Me</h3>
+              {loading ? "Sending..." : "Send"}
+            </button>
+          </form>
+        </motion.div>
 
-                <form
-                    ref={formRef}
-                    onSubmit={handleSubmit}
-                    className=' flex flex-col gap-1 mt-6'
-                >
-                    <label className='flex flex-col'>
-                        <span className='text-white font-medium mb-2'>Your Name</span>
-                        <input
-                            type='text'
-                            name='name'
-                            value={form.name}
-                            required
-                            autoComplete="off"
-                            onChange={handleChange}
-                            placeholder="What's your good name?"
-                            className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-                        />
-                    </label>
-                    <label className='flex flex-col'>
-                        <span className='text-white font-medium mb-2'>Your email</span>
-                        <input
-                            type='email'
-                            name='email'
-                            value={form.email}
-                            required
-                            autoComplete="off"
-                            onChange={handleChange}
-                            placeholder="What's your email address?"
-                            className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-                        />
-                    </label>
-                    <label className='flex flex-col'>
-                        <span className='text-white font-medium mb-2'>Your Message</span>
-                        <textarea
-                            rows={5}
-
-                            name='message'
-                            value={form.message}
-                            required
-                            autoComplete="off"
-                            onChange={handleChange}
-                            placeholder='What you want to say?'
-                            className='bg-tertiary max-h-28 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium resize-none'
-                        />
-                    </label>
-
-                    <button
-                        type='submit'
-                        className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
-                    >
-                        {loading ? "Sending..." : "Send"}
-                    </button>
-                </form>
-            </motion.div>
-
-            <motion.div
-                variants={slideIn("right", "tween", 0.2, 1)}
-                className='h-full xl:flex-1  '
-            >
-                <EarthCanvas />
-            </motion.div>
-        </div>
-    );
+        <motion.div
+          variants={slideIn("right", "tween", 0.2, 1)}
+          className="h-full xl:flex-1   "
+        >
+          <EarthCanvas />
+        </motion.div>
+      </div>
+    </div>
+  );
 };
 
-export default Contact
+export default Contact;

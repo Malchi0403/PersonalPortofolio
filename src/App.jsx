@@ -29,12 +29,11 @@ useLayoutEffect(() => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setMinTimePassed(true);
-    }, 1800); // 🔥 atur: 1.5s – 2s ideal
+    }, 1800);
 
     return () => clearTimeout(timer);
   }, []);
 
-  // ✅ hide loader kalau dua-duanya siap
   useEffect(() => {
     if (!reactReady || !minTimePassed) return;
 
@@ -54,7 +53,6 @@ useLayoutEffect(() => {
     <BrowserRouter>
       <div className={`bg-primary relative z-0 transition-opacity duration-700 ${reactReady ? "opacity-100" : "opacity-0"}`}>
 
-        {/* UI dulu */}
         <Suspense fallback={null}>
           <Header />
           <Hero />
@@ -63,9 +61,6 @@ useLayoutEffect(() => {
 
             <Contact />
         </Suspense>
-
-        {/* Canvas belakangan */}
-
           <div className="fixed inset-0 -z-10 pointer-events-none">
           <StarsCanvas />
         </div>

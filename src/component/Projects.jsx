@@ -80,7 +80,7 @@ const ProjectCard = ({ index, title, desc, vercel, github, image, tags }) => (
 const Projects = () => {
     const [Profile] = profile
     return (
-        <>
+        <div className='min-h-[calc(100dvh-4rem)] mt-14 flex justify-center  w-full ' id={navigation[2].id}>
             <motion.div initial={{
                 opacity: 0,
                 y: -25,
@@ -94,7 +94,7 @@ const Projects = () => {
                         duration: 1,
                         delay: 0.5,
                     }
-                }} className='min-h-[calc(100dvh-4rem)] mt-14 container  ' id={navigation[2].id}>
+                }} className=' container  '>
                 <div>
                     <motion.p initial={{
                         opacity: 0,
@@ -159,7 +159,7 @@ const Projects = () => {
                     })}
                 </div>
             </motion.div>
-        </>
+        </div>
     );
 };
 

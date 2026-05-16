@@ -43,7 +43,7 @@ const About = () => {
 
         <div className='min-h-[calc(100dvh-4rem)] mt-14   w-full' id={navigation[1].id}>
 
-            <div className='flex flex-col md:flex-row  md:justify-around items-center  w-full gap-1 '>
+            <div className='flex flex-col md:flex-row  md:justify-around items-center   w-full gap-1 '>
                 <Tilt className=" w-full  lg:max-w-[30%] lg:grid lg:place-items-center   ">
                     <motion.img initial={{
                         opacity: 0,
