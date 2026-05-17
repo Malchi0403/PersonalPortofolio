@@ -59,7 +59,7 @@ const About = () => {
                                 duration: 1,
                                 delay: 1,
                             }
-                        }} src={images[0].mine} className='h-full w-1/2 mx-auto lg:w-full  lg:max-w-[280px] object-cover -8 rounded-lg lg:shadow-sm shadow-slate-50' />
+                        }} src={images[0].mine} alt="Misael Malchiram Timpolas" className='h-full w-1/2 mx-auto lg:w-full  lg:max-w-[280px] object-cover -8 rounded-lg lg:shadow-sm shadow-slate-50' />
                 </Tilt>
                 <div className="w-full lg:max-w-[70%] ">
                     <div className='lg:text-[42px] xs:text-[32px] text-center'>

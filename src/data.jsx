@@ -143,30 +143,35 @@ export const profile = [
 
 export const social = [
     {
+        name: 'LinkedIn',
         icon: <FiLinkedin />,
         href: 'https://www.linkedin.com/in/malchiram',
         color: "text-blue-500",
         colorHover: "hover:text-blue-900",
     },
     {
+        name: 'GitHub',
         icon: <FiGithub />,
         href: 'https://github.com/Malchi0403',
         color: "text-white",
         colorHover: "hover:text-gray-500",
     },
     {
+        name: 'Instagram',
         icon: <FiInstagram />,
         href: 'https://www.instagram.com/misaeeeelt',
         color: "text-purple-500",
         colorHover: "hover:text-purple-700",
     },
     {
+        name: 'Facebook',
         icon: <FiFacebook />,
         href: 'https://www.facebook.com/misaeltimpolas',
         color: "text-blue-500",
         colorHover: "hover:text-blue-600",
     },
     {
+        name: 'WhatsApp',
         icon: <FaWhatsapp />,
         href: 'https://wa.me/6282114057823',
         color: "text-green-500",

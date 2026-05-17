@@ -108,7 +108,7 @@ const Hero = () => {
                                 <div className="font-body">
                                     <h1
                                         className="text-lg md:text-3xl ">
-                                        Hey, I'm <span className="text-fuchsia-800">{Profile.name}</span>
+                                        Hey, I'm <span className="text-fuchsia-300">{Profile.name}</span>
                                     </h1>
                                     <p className=" text-sm my-2  md:w-full md:text-base md:mb-6">
                                        I build fast, scalable, and production-ready web applications.
@@ -124,7 +124,7 @@ const Hero = () => {
                             <div className="w-full max-w-[17rem] h-full max-h-[15rem] bg-violet-800 bg-opacity-20 rounded-t-full outline outline-offset-8 outline-fuchsia-600">
                                 <div className="w-full h-full   ">
 
-                                    <Canvas camera={{ position: isMobile ? [0, 0, 10] : [0, 0, 8], near: 1, far: 100 }} >
+                                    <Canvas camera={{ position: isMobile ? [0, 0, 10] : [0, 0, 8], near: 1, far: 100 }} dpr={[1, 1.5]}>
                                         <Suspense fallback={<CanvasLoader />}>
                                             <MyMesh isMobile={isMobile} />
                                         </Suspense>
@@ -139,7 +139,7 @@ const Hero = () => {
                             {social.map((item, index) => {
                                 return (
                                     <li key={index} className={`flex justify-content items-center ${item.color ? item.color : "text-white"} ${item.colorHover ? item.colorHover : 'hover:text-red-500'}`}>
-                                        <a href={item.href} className="text-base">
+                                        <a href={item.href} className="text-base" aria-label={`Visit my ${item.name} profile`}>
                                             {React.cloneElement(item.icon, { size: 20 })}
                                         </a>
                                     </li>
