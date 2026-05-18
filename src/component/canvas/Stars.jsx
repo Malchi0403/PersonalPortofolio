@@ -30,7 +30,7 @@ useFrame((state, delta) => {
 
 const StarsCanvas = () => {
   return (
-      <Canvas camera={{ position: [0, 0, 1] }} className="!-z-10">
+      <Canvas camera={{ position: [0, 0, 1] }} className="!-z-10" dpr={[1, 1.5]}>
           <Stars />
       </Canvas>
   );
