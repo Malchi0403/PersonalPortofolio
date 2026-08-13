@@ -59,9 +59,9 @@ const ProjectCard = ({ index, title, desc, vercel, github, image, tags }) => (
 
             </div>
 
-            <div className=' flex-grow my-3 my-elements'>
+            <div className=' flex-grow my-3 '>
                 <h3 className='text-white font-bold text-[24px]'>{title}</h3>
-                <p className='mt-2 text-secondary text-sm' style={{ maxHeight: '50px' }}>{desc}</p>
+                <p className='mt-2 text-secondary my-elements text-sm  max-h-[70px]' >{desc}</p>
             </div>
             <div className=' flex flex-wrap gap-1'>
                 {tags.map((tag,i) => (

@@ -92,13 +92,19 @@ const Contact = () => {
 
   return (
     <div
-      className={`h-[calc(100dvh-4rem)] mt-14 w-full  flex justify-center  `}
+      className={`container mx-auto mt-12   h-[calc(100dvh-4rem)]   `}
       id={navigation[3].id}
     >
-      <div className="container h-full py-4 flex xl:flex-row flex-col-reverse justify-between z-10  overflow-hidden items-center  ">
+      <div className="w-full  h-full flex flex-col  lg:flex-row-reverse overflow-hidden  justify-between items-center  py-2">
+         <motion.div
+          variants={slideIn("right", "tween", 0.2, 1)}
+          className=" flex-1   lg:h-full max-w-lg mx-auto flex my-auto "
+        >
+          <EarthCanvas />
+        </motion.div>
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
-          className="flex-[0.75] bg-sky-950 h-[90%] px-8 py-6 min-w-[50%]  rounded-2xl"
+          className=" bg-sky-950  px-8 py-6 w-full mx-auto xl:mx-0  max-w-md  max-h-fit my-auto  rounded-2xl"
         >
           {/* <p className={`${styles.sectionSubText} mb-1 text-center ms-1`}>Get in touch</p> */}
           <h3 className="text-white  text-center sm:text-[40px] xs:text-[38px] text-[30px]">
@@ -120,7 +126,7 @@ const Contact = () => {
                 autoComplete="off"
                 onChange={handleChange}
                 placeholder="What's your good name?"
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                className="bg-tertiary py-2 px-4 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
               />
             </label>
             <label className="flex flex-col">
@@ -133,7 +139,7 @@ const Contact = () => {
                 autoComplete="off"
                 onChange={handleChange}
                 placeholder="What's your email address?"
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                className="bg-tertiary py-2 px-4 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
               />
             </label>
             <label className="flex flex-col">
@@ -146,25 +152,20 @@ const Contact = () => {
                 autoComplete="off"
                 onChange={handleChange}
                 placeholder="What you want to say?"
-                className="bg-tertiary max-h-28 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium resize-none"
+                className="bg-tertiary max-h-28 py-2 px-4 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium resize-none"
               />
             </label>
 
             <button
               type="submit"
-              className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+              className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit  text-white font-bold shadow-md shadow-primary"
             >
               {loading ? "Sending..." : "Send"}
             </button>
           </form>
         </motion.div>
 
-        <motion.div
-          variants={slideIn("right", "tween", 0.2, 1)}
-          className="h-full xl:flex-1   "
-        >
-          <EarthCanvas />
-        </motion.div>
+       
       </div>
     </div>
   );
